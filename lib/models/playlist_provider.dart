@@ -96,7 +96,7 @@ class PlaylistProvider extends ChangeNotifier {
   void playPreviousSong() async {
     // if more than 2 secs have passed, restart the current song
     if (_currentDuration.inSeconds > 2) {
-      _currentDuration = Duration.zero;
+      seek(Duration.zero);
     }
     // if it's within first 2 seconds of the song, go to previous song
     else {
