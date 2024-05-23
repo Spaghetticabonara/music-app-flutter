@@ -44,8 +44,8 @@ class PlaylistProvider extends ChangeNotifier {
   // play the song
   void play() async {
     final String path = _playlist[_currentSongIndex!].audioPath;
-    await _audioPlayer.stop();
-    await _audioPlayer.play(AssetSource(path));
+    await _audioPlayer.stop(); // stop current song
+    await _audioPlayer.play(AssetSource(path)); // play the new song
     _isPlaying = true;
     notifyListeners();
   }
@@ -118,13 +118,13 @@ class PlaylistProvider extends ChangeNotifier {
     });
 
     // listen for current duration
-    _audioPlayer.onDurationChanged.listen((newPosition) {
+    _audioPlayer.onPositionChanged.listen((newPosition) {
       _currentDuration = newPosition;
       notifyListeners();
     });
 
     // listen for song completion
-    _audioPlayer.onDurationChanged.listen((newPosition) {
+    _audioPlayer.onPlayerComplete.listen((event) {
       playNextSong();
     });
   }
