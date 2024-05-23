@@ -26,9 +26,12 @@ class SettingsPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             // dark mode
-            const Text(
+            Text(
               'Dark Mode',
-              style: TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Theme.of(context).colorScheme.inversePrimary,
+              ),
             ),
 
             // switch

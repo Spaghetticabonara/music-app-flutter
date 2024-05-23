@@ -41,15 +41,26 @@ class SongPage extends StatelessWidget {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: const Icon(Icons.arrow_back),
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
                     ),
                     // title
-                    const Text('PLAYLIST'),
+                    Text(
+                      'PLAYLIST',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
+                    ),
 
                     // menu button
                     IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.menu),
+                      icon: Icon(
+                        Icons.menu,
+                        color: Theme.of(context).colorScheme.inversePrimary,
+                      ),
                     ),
                   ],
                 ),
@@ -79,12 +90,22 @@ class SongPage extends StatelessWidget {
                               children: [
                                 Text(
                                   currentSong.songName,
-                                  style: const TextStyle(
+                                  style: TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 20,
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .inversePrimary,
                                   ),
                                 ),
-                                Text(currentSong.artistName),
+                                Text(
+                                  currentSong.artistName,
+                                  style: TextStyle(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .inversePrimary,
+                                  ),
+                                ),
                               ],
                             ), // heart icon
                             const Icon(
@@ -104,20 +125,38 @@ class SongPage extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
                   child: Column(
                     children: [
-                      const Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           // start time
-                          Text('0:00'),
+                          Text(
+                            formatTime(value.currentDuration),
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
+                            ),
+                          ),
 
                           // shuffle icon
-                          Icon(Icons.shuffle),
+                          Icon(
+                            Icons.shuffle,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
 
                           // repeat icon
-                          Icon(Icons.repeat),
+                          Icon(
+                            Icons.repeat,
+                            color: Theme.of(context).colorScheme.inversePrimary,
+                          ),
 
                           // end time
-                          Text('0:00'),
+                          Text(
+                            formatTime(value.totalDuration),
+                            style: TextStyle(
+                              color:
+                                  Theme.of(context).colorScheme.inversePrimary,
+                            ),
+                          ),
                         ],
                       ),
                       SliderTheme(

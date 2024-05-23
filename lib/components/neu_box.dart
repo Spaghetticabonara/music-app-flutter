@@ -12,17 +12,18 @@ class NeuBox extends StatelessWidget {
     return Container(
       constraints: const BoxConstraints(maxHeight: 380, maxWidth: 300),
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           // darker shadow on bottom right
           BoxShadow(
-            color: Colors.grey.shade500,
+            color: Theme.of(context).colorScheme.onSecondary,
             blurRadius: 15,
             offset: const Offset(4, 4),
           ),
+          // lighter shadow on top left
           BoxShadow(
-            color: Colors.white,
+            color: Theme.of(context).colorScheme.onPrimary,
             blurRadius: 15,
             offset: const Offset(-4, -4),
           ),

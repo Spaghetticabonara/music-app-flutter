@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
               title: Text(song.songName),
               subtitle: Text(song.artistName),
               leading: Image.asset(song.albumArtImagePath),
+              textColor: Theme.of(context).colorScheme.inversePrimary,
               onTap: () => goToSong(index),
             );
           },
