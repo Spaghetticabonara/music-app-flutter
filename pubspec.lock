@@ -113,6 +113,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  enhanced_http:
+    dependency: "direct main"
+    description:
+      name: enhanced_http
+      sha256: "2f24fec2da21b0c964834f3f8e6f7200923a2ac0eac228de1795ba82eb52e1fd"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.1.1"
   fake_async:
     dependency: transitive
     description:
@@ -150,6 +158,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_config:
+    dependency: "direct main"
+    description:
+      name: flutter_config
+      sha256: a07e6156bb6e776e29c6357be433155acda87d1dab1a3f787a72091a1b71ffbf
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.2"
   flutter_lints:
     dependency: "direct dev"
     description:
@@ -430,5 +446,5 @@ packages:
     source: hosted
     version: "1.0.4"
 sdks:
-  dart: ">=3.2.5 <4.0.0"
+  dart: ">=3.2.5 <3.7.0"
   flutter: ">=3.16.6"
