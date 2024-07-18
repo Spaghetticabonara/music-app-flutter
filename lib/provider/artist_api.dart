@@ -14,7 +14,7 @@ class ArtistApi {
   static Future<List<Artist>> getArtist() async {
     const baseUrl = 'https://api.spotify.com';
     const token =
-        'Bearer BQA-YcX3g4eV8Y8xKs07kNdFKuSV7HB8FmF4TJTqCYBdJ4_1tOsELJSl8tyYBfpn_0w6oWG-R1PyTAXy9wWKVhKdMPS41yjRWWLV3l-ogNikt35Ti-w';
+        'Bearer BQA4trE4M_8E3IIxNqxTV_lIwuVpqj77m6hlL3Am-LLAYu3ad4MltSM_-omSRVVXD-vVM4lo7ALOwO70NZtpxjk5rEIhgAEJYKMqYNcfRGS1MPwu3Eo';
     final query = {
       'ids':
           '382ObEPsp2rxGrnsizN5TX,1A2GTWGtFfWp7KSQTwWOyo,2noRn2Aes5aoNVsU6iWThc',

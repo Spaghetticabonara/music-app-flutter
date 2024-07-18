@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_config/flutter_config.dart';
+import 'package:music_player_app/firebase_options.dart';
 import 'package:music_player_app/models/playlist_provider.dart';
 import 'package:music_player_app/themes/theme_provider.dart';
 import 'package:provider/provider.dart';
@@ -7,7 +9,8 @@ import 'pages/home_page.dart';
 
 void main() async {
   // Required by FlutterConfig
-  // WidgetsFlutterBinding.ensureInitialized();
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   // load all environment variables
   // await FlutterConfig.loadEnvVariables();
   runApp(

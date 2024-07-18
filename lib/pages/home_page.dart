@@ -64,40 +64,40 @@ class _HomePageState extends State<HomePage> {
       body: Consumer<PlaylistProvider>(
         builder: (context, value, child) {
           // // get the playlist
-          // final List<Song> playlist = value.playlist;
+          final List<Song> playlist = value.playlist;
 
-          // // return list view UI
-          // return ListView.builder(
-          //   itemCount: playlist.length,
-          //   itemBuilder: (context, index) {
-          //     // get individual song
-          //     final Song song = playlist[index];
-
-          //     // return list tile UI
-          //     return ListTile(
-          //       title: Text(song.songName),
-          //       subtitle: Text(song.artistName),
-          //       leading: Image.asset(song.albumArtImagePath),
-          //       textColor: Theme.of(context).colorScheme.inversePrimary,
-          //       onTap: () => goToSong(index),
-          //     );
-          //   },
-          // );
-
+          // return list view UI
           return ListView.builder(
-            itemCount: users.length,
-            itemBuilder: ((context, index) {
-              final user = users[index];
+            itemCount: playlist.length,
+            itemBuilder: (context, index) {
+              // get individual song
+              final Song song = playlist[index];
+
+              // return list tile UI
               return ListTile(
-                // leading: ClipRRect(
-                //   borderRadius: BorderRadius.circular(100),
-                //   child: Image.network(user['picture']['thumbnail']),
-                // ),
-                title: Text(user.fullName),
-                subtitle: Text(user.phone),
+                title: Text(song.songName),
+                subtitle: Text(song.artistName),
+                leading: Image.asset(song.albumArtImagePath),
+                textColor: Theme.of(context).colorScheme.inversePrimary,
+                onTap: () => goToSong(index),
               );
-            }),
+            },
           );
+
+          // return ListView.builder(
+          //   itemCount: users.length,
+          //   itemBuilder: ((context, index) {
+          //     final user = users[index];
+          //     return ListTile(
+          //       // leading: ClipRRect(
+          //       //   borderRadius: BorderRadius.circular(100),
+          //       //   child: Image.network(user['picture']['thumbnail']),
+          //       // ),
+          //       title: Text(user.fullName),
+          //       subtitle: Text(user.phone),
+          //     );
+          //   }),
+          // );
         },
       ),
     );
@@ -109,10 +109,11 @@ class _HomePageState extends State<HomePage> {
       users = response;
     });
   }
+
   Future<void> getArtist() async {
     final response = await ArtistService.getArtist();
     setState(() {
-      users = response;
+      artists = response;
     });
   }
 }
